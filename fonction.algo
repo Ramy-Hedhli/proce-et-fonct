@@ -1,0 +1,25 @@
+FUNCTION dot_product(U,V : ARRAY_OF float[]) : float
+VAR
+    i : integer;
+    produit : float;
+BEGIN
+    produit :=0;
+    IF (U.lenght = V.lenght) THEN
+        FOR i FROM 1 TO U.lenght STEP 1  DO
+                produit := produit + U[i]*V[i];
+        END_FOR
+    END_IF
+    RETURN produit ;
+END
+ALGORITHM checkpoint
+VAR
+    PS : float;
+    X,Y : ARRAY_OF Float[];
+BEGIN
+        PS := dot_product(X,Y);
+        IF (ps=0) THEN
+            whrite("les vecteur :" X "et" Y"sont orthogonaux");
+        ELSE
+            whrite("les vecteur :" X "et" Y"ne sont pas orthogonaux");
+        END_IF
+END
